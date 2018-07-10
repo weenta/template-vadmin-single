@@ -27,6 +27,7 @@ var myPlugin = {}
 myPlugin.install = function (Vue, options) {
   Vue.prototype.$cs = cs
 }
+Vue.use(myPlugin)
 
 // mixin
 Vue.mixin(mixin)
