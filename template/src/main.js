@@ -14,6 +14,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faBoxOpen, faUser, faThList, faThLarge, faCog } from '@fortawesome/free-solid-svg-icons'
 library.add(faBoxOpen, faUser, faThList, faThLarge, faCog)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
+import api from './api'
 
 Vue.use(Element, { size: 'small' })
 
@@ -25,7 +26,10 @@ Vue.config.productionTip = false
 
 var myPlugin = {}
 myPlugin.install = function (Vue, options) {
+  // $cs 封装Element Notification MessageBox模块，简化调用方式
   Vue.prototype.$cs = cs
+  // $api api接口
+  Vue.prototype.$api = api
 }
 Vue.use(myPlugin)
 

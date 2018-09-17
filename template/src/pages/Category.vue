@@ -29,7 +29,6 @@
 </template>
 
 <script>
-import { CATEGORY_LIST } from '@/api'
 export default {
   data() {
     return {
@@ -45,7 +44,7 @@ export default {
   methods: {
     getList() {
       this.loading = true
-      CATEGORY_LIST().then(res=>{
+      this.$api.CATEGORY_LIST().then(res=>{
         this.loading = false
         if (res.data.code === 200) {
           this.list = JSON.parse(JSON.stringify(res.data.data))
