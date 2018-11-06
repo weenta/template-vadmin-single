@@ -1,5 +1,7 @@
 import axios from 'axios'
 import qs from 'qs'
+import router from '../router'
+
 const BASE = ''
 
 // 请求拦截器
@@ -12,6 +14,9 @@ axios.interceptors.request.use((config) => {
 // 响应拦截器
 axios.interceptors.response.use((response) => {
   // 对响应数据做点什么
+  // if (response.data.code === 403) {
+  //   router.replace({path: '/login'})
+  // }
   return response
 }, (error) => {
   // 对响应错误做点什么
