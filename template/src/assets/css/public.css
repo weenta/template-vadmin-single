@@ -54,3 +54,7 @@
     line-height: 45px;
     position: relative;
 }
+
+.el-aside {
+    overflow-x: hidden;
+}

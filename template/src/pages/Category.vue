@@ -8,7 +8,7 @@
         </el-col>
       </el-row>    
     </div>
-    <div v-loading='loading' class='content'>
+    <div v-loading='loading' :style="{ height: tableHeight + 'px' }" class='content'>
       <el-row class='category-title'>
         <span class='name'>分类名称</span>
         <span class='icon'>图标</span>
@@ -23,6 +23,7 @@
         show-checkbox
         node-key='id'
         default-expand-all
+        
       />
     </div>
   </div>
@@ -34,6 +35,12 @@ export default {
     return {
       list: [],
       loading: false,
+    }
+  },
+
+  computed: {
+    tableHeight() {
+      return window.innerHeight - 200
     }
   },
 
@@ -114,6 +121,9 @@ export default {
 </script>
 
 <style scoped>
+.content {
+  overflow-y: scroll;
+}
 .category {
   background-color: #f1f2f7;
 }
